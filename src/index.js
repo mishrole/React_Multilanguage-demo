@@ -17,20 +17,6 @@ i18next
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    // resources: {
-    //   en: {
-    //     translation: {
-    //       "Welcome to React": "Welcome to React and react-i18next"
-    //     }
-    //   },
-    //   es: {
-    //     translation: {
-    //       "Welcome to React": "Bienvenido a React y react-i18next"
-    //     }
-    //   }
-    // },
-    // lng: "en",
-    // lng: document.querySelector('html').lang,
     supportedLngs: ['en', 'es'],
     fallbackLng: "en",
     detection: {
@@ -57,12 +43,6 @@ i18next
       escapeValue: false
     }
   });
-
-  // function App() {
-  //   const { t } = useTranslation();
-  
-  //   return <h2>{t('welcome_to_react')}</h2>;
-  // }
 
 ReactDOM.render(
   <React.StrictMode>

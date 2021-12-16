@@ -1,4 +1,12 @@
 {
     "welcome_to_react": "Welcome to React and react-i18next",
-    "dynamic_value": "It's been {{number_of_days}} days since this app was released"
+    "dynamic_value": "It's been {{number_of_days}} days since this app was released",
+    "home": "Home",
+    "about-us": "About us",
+    "products": "Products",
+    "services": "Services",
+    "contact": "Contact",
+    "login": "Login",
+    "who-we-are": "Who We Are",
+    "who-we-are_message": "PMXG is a company that was founded in 2005, our team has over 25 years of experience and recognition in the Precious Metals Market. This experience that has allowed us to develop a work philosophy based on better serving our client."
 }
