@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import { useTranslation } from 'react-i18next';
 import './App.css';
+import { Header } from './components/header/Header';
 
 function App() {
+  const { t } = useTranslation();
+
+  const releaseDate = new Date('2021-12-14');
+  const timeDifference = new Date() - releaseDate;
+  const number_of_days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header></Header>
+      <div className="container">
+        <div className="d-flex flex-column align-items-start">
+          <h1 className="font-weight-normal mb-3">{t('welcome_to_react')}</h1>
+          <p>{t('dynamic_value', {number_of_days})}</p>
+        </div>
+      </div>
+    </>
   );
 }
 

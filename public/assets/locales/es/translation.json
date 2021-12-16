@@ -1,0 +1,4 @@
+{
+    "welcome_to_react": "Bienvenido a React y react-i18next",
+    "dynamic_value": "Han pasado {{number_of_days}} días desde que esta app fue lanzada"
+}
