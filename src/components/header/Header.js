@@ -3,20 +3,35 @@ import styled from 'styled-components';
 import i18next from "i18next";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
-// import { css } from '@emotion/react';
-// import styled from '@emotion/styled';
+import { NavLink } from "react-router-dom";
 
 const StyledNavbar = styled(Navbar)`
     margin-bottom: 20px;
     padding: 20px 0;
 `;
 
-const StyledNavLink = styled(Nav.Link)`
+const StyledNavLink = styled(NavLink)`
     &&& {
         color: #000000;
         font-size: 14px;
         font-weight: bold;
         margin: 0 .5em;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: rgba(0,0,0,.55);
+        }
+    }
+`;
+
+const StyledExternalLink = styled.a`
+    &&& {
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 .5em;
+        letter-spacing: 0.5px;
         text-transform: uppercase;
 
         &:hover {
@@ -42,22 +57,8 @@ export const Header = () => {
         }
     ];
 
-    // Tagged Template Literal + CSS Postprocess
-    // const NavbarStyles = css`
-    //     padding: 20px 0;
-    // `;
-
-
-    // Styled
-    // const NavbarWhite = styled.Navbar`
-    //     padding: 20px 0;
-    // `
-    
     return (
         <>
-            {
-            /* css(HeaderStyles) -> CSS in JS */
-            /* <Navbar bg="white" variant="light" fixed="top" className={NavbarStyles}> */}
             <StyledNavbar bg="white" fixed="top" expand="lg">
                 <Container>
                     <Navbar.Brand>
@@ -66,12 +67,13 @@ export const Header = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll" className="justify-content-lg-end my-3 my-lg-0">
                         <Nav navbarScroll>
-                            <StyledNavLink href="#home">{t('home')}</StyledNavLink>
-                            <StyledNavLink href="#about-us">{t('about-us')}</StyledNavLink>
-                            <StyledNavLink href="#products">{t('products')}</StyledNavLink>
-                            <StyledNavLink href="#services">{t('services')}</StyledNavLink>
-                            <StyledNavLink href="#contact">{t('contact')}</StyledNavLink>
-                            <StyledNavLink href="#login">{t('login')}</StyledNavLink>
+                            {/* <NavLink className={({ isActive }) => isActive ? "red" : "blue"} /> */}
+                            <StyledNavLink className="nav-link" to="/">{t('home')}</StyledNavLink>
+                            <StyledNavLink className="nav-link" to="/about-us">{t('about-us')}</StyledNavLink>
+                            <StyledNavLink className="nav-link" to="/products">{t('products')}</StyledNavLink>
+                            <StyledNavLink className="nav-link" to="/services">{t('services')}</StyledNavLink>
+                            <StyledExternalLink className="nav-link" href="https://app.pmxg.com/contact">{t('contact')}</StyledExternalLink>
+                            <StyledExternalLink className="nav-link" href="https://app.pmxg.com/auth">{t('login')}</StyledExternalLink>
                             {
                                 languages.map(({ code, name, country_code }) => (
                                     <Button variant="link" key={ code } className="mx-lg-1 text-start text-lg-end" onClick = {
