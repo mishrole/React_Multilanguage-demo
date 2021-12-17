@@ -40,6 +40,20 @@ const StyledExternalLink = styled.a`
     }
 `;
 
+const StyledButton = styled(Button)`
+    &:focus {
+        box-shadow: none;
+    }
+`;
+
+const StyledNavbarToggler = styled(Navbar.Toggle)`
+    &:focus {
+        box-shadow: none;
+    }
+
+    border: none;
+`;
+
 export const Header = () => {
 
     const { t } = useTranslation();
@@ -64,7 +78,7 @@ export const Header = () => {
                     <Navbar.Brand>
                         <img src="./assets/images/pmxg-large-logo.png" alt="PMXG Logo" width="120px" />
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <StyledNavbarToggler aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll" className="justify-content-lg-end my-3 my-lg-0">
                         <Nav navbarScroll>
                             {/* <NavLink className={({ isActive }) => isActive ? "red" : "blue"} /> */}
@@ -76,11 +90,11 @@ export const Header = () => {
                             <StyledExternalLink className="nav-link" href="https://app.pmxg.com/auth">{t('login')}</StyledExternalLink>
                             {
                                 languages.map(({ code, name, country_code }) => (
-                                    <Button variant="link" key={ code } className="mx-lg-1 text-start text-lg-end" onClick = {
+                                    <StyledButton variant="link" key={ code } className="mx-lg-1 text-start text-lg-end" onClick = {
                                         () => i18next.changeLanguage(code)
                                     }>
                                         <i className={ `flag-icon flag-icon-${country_code}` }></i>
-                                    </Button>
+                                    </StyledButton>
                                 ))
                             }
                         </Nav>

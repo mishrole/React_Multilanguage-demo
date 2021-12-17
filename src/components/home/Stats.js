@@ -33,7 +33,7 @@ export const Stats = () => {
 
     return (
         <>
-            <StyledWrapper>
+            <StyledWrapper name="who-we-are">
                 <StyledContainer fluid>
                     <h2>{t('who-we-are')}</h2>
                     <p>{t('who-we-are_message')}</p>

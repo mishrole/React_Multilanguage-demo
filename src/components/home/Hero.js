@@ -2,8 +2,11 @@ import React from "react";
 import styled from 'styled-components';
 import { Carousel } from "react-bootstrap";
 import { ArrowDown } from "react-bootstrap-icons";
+import { Link } from 'react-scroll';
 
 const StyledCarousel = styled(Carousel)`
+    position: relative;
+    top: 70px;
     max-height: 760px;
 `;
 
@@ -25,7 +28,8 @@ const StyledScrollDownWrapper = styled.div`
     height: 70px;
     position: absolute;
     left: 50%;
-    margin-top: -35px;
+    // margin-top: -35px;
+    margin-top: 30px;
     margin-left: -35px;
     z-index: 100;
 
@@ -38,7 +42,7 @@ const StyledScrollDownWrapper = styled.div`
     }
 `;
 
-const StyledScrollDown = styled.a`
+const StyledScrollDown = styled(Link)`
     background-color: #002764;
     line-height: 0;
     color: transparent;
@@ -80,7 +84,7 @@ export const Hero = () => {
                 </StyledCarouselItem>
             </StyledCarousel>
             <StyledScrollDownWrapper>
-                <StyledScrollDown>
+                <StyledScrollDown to="who-we-are" smooth={true} duration={1200}>
                     <StyledArrowDown color="white" size={16} />
                 </StyledScrollDown>
             </StyledScrollDownWrapper>
